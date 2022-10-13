@@ -4,7 +4,7 @@ import Nav from '../components/Nav.jsx';
 import axios from 'axios';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import Cards from '../components/Cards.jsx';
-// const API_KEY = '6e448c3c4fde4e1be3633c806af4d3c1';
+const apiKey = '6e448c3c4fde4e1be3633c806af4d3c1';
 
 export default function Home() {
   const [cities, setCities] = useState([]);
@@ -15,7 +15,7 @@ export default function Home() {
 
   async function onSearch(cityToSearch) {
     try {
-      let jsonCity = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityToSearch}&appid=${process.env.API_KEY}&units=metriccityToSearch`);
+      let jsonCity = await axios.get(`${process.env.NEXT_PUBLIC_APIKEYS_URL}/weather?q=${cityToSearch}&appid=${apiKey}&units=metriccityToSearch`);
       let cityData = jsonCity.data;
       if (cityData.main !== undefined) {
         const city = {
