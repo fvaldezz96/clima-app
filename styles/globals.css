@@ -1,26 +1,39 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import '@sweetalert2/theme-bootstrap-4/bootstrap-4.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-white;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #0c4a6e;
+  border: 3px solid white;
+  border-radius: 10px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+html {
+  @apply bg-white from-sky-200 via-indigo-300 to-blue-400 font-semibold font-sans;
 }
 
-* {
-  box-sizing: border-box;
+main {
+  @apply p-10 py-2 md:px-20;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-sky-900;
+}
+
+p {
+  @apply text-gray-700;
 }
