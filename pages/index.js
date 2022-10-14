@@ -15,7 +15,7 @@ export default function Home() {
 
   async function onSearch(cityToSearch) {
     try {
-      let jsonCity = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${cityToSearch}&appid=${apikey}&units=metriccityToSearch`);
+      let jsonCity = await axios.get(`${process.env.NEXT_PUBLIC_APIKEYS_URL}?q=${cityToSearch}&appid=${apikey}&units=metriccityToSearch`);
       let cityData = jsonCity.data;
       if (cityData.main !== undefined) {
         const city = {
