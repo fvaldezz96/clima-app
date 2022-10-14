@@ -12,7 +12,6 @@ export default function Home() {
   function onClose(id) {
     setCities((oldCities) => oldCities.filter((city) => city.id !== id));
   }
-
   async function onSearch(cityToSearch) {
     try {
       let jsonCity = await axios.get(`${process.env.NEXT_PUBLIC_APIKEYS_URL}?q=${cityToSearch}&appid=${apikey}&units=metriccityToSearch`);
